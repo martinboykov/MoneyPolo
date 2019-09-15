@@ -1,32 +1,20 @@
-@font-face {
-  font-family: "DINP-R";
-  src: url("../public/fonts/DINPro-Regular.eot?") format("eot"),
-    url("../public/fonts/DINPro-Regular.woff") format("woff"),
-    url("../public/fonts/DINPro-Regular.ttf") format("truetype"),
-    url("../public/fonts/DINPro-Regular.svg#DINPro-Regular") format("svg");
-  font-style: normal;
-}
+// Mixins and Settings Scss Files
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/fonts";
 
-$color: blue;
+// Vendor
+@import "vendor";
 
-.autoprefixer-test {
-  user-select: none;
-  color: $color;
-}
-html,
-body {
-  font-family: "DINP-R";
-  width: 100%;
-  height: 100%;
-}
+// Core Setup Scss Files
+@import "core/normalize";
+@import "core/global";
+@import "core/typography";
 
-.background-img-test {
-  // background-image: url("../public/images/test-bg.jpg");
-  width: 100vh;
-  height: 100vw;
-  margin-top: 1000px;
-}
+// Layout Scss Files
+@import 'layout/header';
+@import 'layout/footer';
 
-.img-test {
-  margin-top: 200px;
-}
+// Pages Scss Files
+@import 'pages/home';
+

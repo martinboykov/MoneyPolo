@@ -1,0 +1,67 @@
+ /* Home page */
+
+// .open-sans {
+//   font-family:  $font-default;
+//   font-weight: bold;
+//   font-size: 15px;
+//   color: $blue;
+// }
+// .open-sans--bold {
+//     font-family: $font-default;
+//     text-transform: uppercase;
+//     font-size: 58px;
+//     color: $white;
+//   }
+// .open-sans-light--italic {
+//   font-family: $font-open-sans-light;
+//   font-style: italic;
+//   font-size: 24px;
+//   color: $white;
+// }
+
+// .montserat {
+//   font-family: $font-montserat-bold;
+//   text-transform: uppercase;
+//   font-size: 24px;
+//   color: $blue;
+// }
+
+/*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+*/
+
+@media (min-width: $site-min-width) and (max-width: $mobile) {
+  // SCSS
+}
+
+/*
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+*/
+
+@media (max-width: $tablet) {
+  // SCSS
+}
+
+/*
+    ##Device = Tablets, Ipads (portrait)
+*/
+
+@media (min-width: $tablet + 1px) and (max-width: $tablet-portrait) {
+  // SCSS
+}
+
+/*
+    ##Device = Laptops, Desktops
+*/
+
+@media (max-width: $laptop) {
+  // SCSS
+}
+
+/*
+  ##Device = Desktops
+*/
+
+@media (min-width: $laptop + 1px) {
+  // SCSS
+}
