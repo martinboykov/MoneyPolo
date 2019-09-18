@@ -2,10 +2,12 @@
  .main {
    width: 100%;
    margin: 0 auto;
-
+  //  height: 600px;
+  position: relative;
    .hero {
      width: 100%;
-
+     height: 600px;
+     position: relative;
      &__text {
        margin: 0 auto;
        max-width: 1366px;
@@ -41,13 +43,17 @@
 
      &__bg-img {
        background-image: url('../public/images/first_sec_bg_img.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
-       background-position: center top;
+       background-position: 50% 18.51%;
        background-repeat: no-repeat;
        background-size: cover;
-       background-attachment: fixed;
-       height: 100vh;
-       position: relative;
+       // background-attachment: scroll;
+       height: 100%;
+       width:  100%;
+       position: absolute;
+       top: 0;
+       left: 0;
        z-index: 73;
+      //  transform: scale(2);
      }
 
 
@@ -56,10 +62,9 @@
        &__bg-color-fill {
          background: #00993e;
          mix-blend-mode: soft-light;
-         content: "";
          display: block;
-         width: 100%;
          height: 100%;
+       width:  100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -72,10 +77,9 @@
      @supports not (mix-blend-mode: soft-light) {
        &__bg-color-fill {
          background: $blue;
-         content: "";
          display: block;
-         width: 100%;
          height: 100%;
+       width:  100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -87,14 +91,12 @@
 
 
      @supports (mix-blend-mode: hard-light) {
-       &__bg-color-layer {
-         //  background: url('../public/images/first_sec_layer_10.svg');
-         mix-blend-mode: hard-light;
-         background-color: #493f3e;
-         content: "";
+       &__bg-svg-layer {
+          background-image: url('../public/images/first_sec_layer_10.png');
+          mix-blend-mode: hard-light;
          display: block;
-         width: 100%;
          height: 100%;
+         width:  100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -110,7 +112,7 @@
      display: flex;
      flex-flow: row nowrap;
      justify-content: center;
-
+     z-index: 90;
      .feature {
        display: flex;
        flex-flow: column nowrap;
@@ -142,6 +144,7 @@
    }
 
    .contact {
+    z-index: 100;
      width: 100%;
      height: 550px;
      position: relative;
@@ -259,57 +262,60 @@
 */
 
  @media screen and (max-width: $tablet) {
+
    // SCSS
    .main {
-    .hero {
-      &__text {
-        h1 {
-          font-size: 58px;
-          line-height: 75px;
-          left: calc(348px - 267px); // custom - for pixel perfect
-          top: 214px; // custom - for pixel perfect
-          letter-spacing: -0.9px; // custom - for pixel perfect
+     .hero {
+       &__text {
+         h1 {
+           font-size: 58px;
+           line-height: 75px;
+           left: calc(348px - 267px); // custom - for pixel perfect
+           top: 214px; // custom - for pixel perfect
+           letter-spacing: -0.9px; // custom - for pixel perfect
 
-        }
-        .line-breaker {
-          display: none;
-        }
+         }
 
-        p {
-          font-size: 24px;
-          line-height: 29px; // custom - for pixel perfect
-          left: calc(354px - 271px); // custom - for pixel perfect
-          top: 389px;
-          letter-spacing: -0.6px;
-          .line-breaker {
-            display: none;
-          }
-        }
-      }
-    }
+         .line-breaker {
+           display: none;
+         }
 
-    .features {
-      flex-flow: column nowrap;
-      justify-content: center;
+         p {
+           font-size: 24px;
+           line-height: 29px; // custom - for pixel perfect
+           left: calc(354px - 271px); // custom - for pixel perfect
+           top: 389px;
+           letter-spacing: -0.6px;
 
-      .feature {
-        padding: 0;
-      }
+           .line-breaker {
+             display: none;
+           }
+         }
+       }
+     }
 
-      .feature:nth-child(1) {
-        margin: 80px 0 155px 0;
-      }
+     .features {
+       flex-flow: column nowrap;
+       justify-content: center;
 
-      .feature:nth-child(2) {
-        margin-bottom: 110px;
-      }
+       .feature {
+         padding: 0;
+       }
 
-      .feature:nth-child(3) {
-        margin-bottom: 125px;
-        transform: translateX(0px);
-      }
-    }
-  }
+       .feature:nth-child(1) {
+         margin: 80px 0 155px 0;
+       }
+
+       .feature:nth-child(2) {
+         margin-bottom: 110px;
+       }
+
+       .feature:nth-child(3) {
+         margin-bottom: 125px;
+         transform: translateX(0px);
+       }
+     }
+   }
  }
 
 
