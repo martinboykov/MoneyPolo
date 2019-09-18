@@ -1,4 +1,202 @@
 /* Header */
 .header {
-  // ...
+  width: 100%;
+  height: $header-height;
+  position: fixed;
+  background-color: white;
+  opacity: 0.902;
+  box-shadow: 0px 0px 30px 0px rgba(81, 81, 81, 0.5);
+  mix-blend-mode: normal;
+  z-index: 81;
+
+  .container {
+    max-width: 1366px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .logo {
+      margin-top: 15px; // custom - for pixel perfect
+      margin-left: 34px; // custom - for pixel perfect
+
+      &__link {
+        img {
+          width: 139px;
+        }
+      }
+    }
+
+    .nav {
+      // flex-shrink: 1;
+      /* default 1 */
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+
+      .menu {
+        margin-right: 0px;
+        @include transition(transform);
+        height: 100%;
+
+        &__item {
+          display: inline-block;
+          padding: 0 13px; // custom - for pixel perfect
+          height: 100%;
+
+          &__link {
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 90px;
+            color: $blue;
+            font-weight: bold;
+            letter-spacing: -1.1px; // custom - for pixel perfect
+
+            &:hover,
+            &:active,
+            &:focus {
+              color: $light-green;
+            }
+
+
+          }
+
+          &.active {
+            a {
+              color: $light-green;
+
+            }
+          }
+        }
+
+        &__item:first-child {
+          margin-left: 0px;
+        }
+      }
+    }
+
+    // .toggle {
+    //   width: 100%;
+    //   height: 100%;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: flex-start;
+
+    //   .toggle-button {
+    //     width: 30px;
+    //     padding-top: 2px;
+
+
+    //     // https://w3bits.com/animated-menu-icon-css/
+    //     &:after,
+    //     &:before,
+    //     & div {
+    //       background: $blue;
+    //       // border-radius: 3px;
+    //       content: "";
+    //       display: block;
+    //       height: 3px;
+    //       margin: 8px 0;
+    //       transition: all 0.2s ease-in-out;
+    //     }
+
+    //     &.active {
+    //       width: 33px;
+
+    //       &:before {
+    //         transform: translateX(-2px) translateY(12px) rotate(220deg);
+    //       }
+
+    //       &:after {
+    //         transform: translateX(-2px) translateY(-10px) rotate(-220deg);
+    //       }
+
+    //       & div {
+    //         transform: scale(0);
+    //       }
+    //     }
+    //   }
+    // }
+
+  }
+}
+
+
+
+
+
+/*
+ ##Device = Desktops
+ min-width = 1366px
+*/
+
+@media screen and (min-width: $laptop + 1px) {
+  // SCSS
+
+}
+
+/*
+	##Device = Laptops, Desktops
+	max-width = 1365px
+*/
+
+@media screen and (max-width: $laptop) {
+
+  // SCSS
+
+}
+
+
+/*
+	##Device = Tablets, Ipads (portrait)
+	min-width = 769px max-width = 1024px
+*/
+
+@media screen and (min-width: $tablet + 1px) and (max-width: $tablet-portrait) {
+
+  // SCSS
+  .header {
+    .container {
+      .logo {}
+
+      .nav {
+        display: none;
+      }
+    }
+  }
+
+}
+
+/*
+	##Device = Low Resolution Tablets, Mobiles (Landscape)
+	max-width = 768px
+*/
+
+@media screen and (max-width: $tablet) {
+  // SCSS
+  .header {
+    .container {
+      .logo {}
+
+      .nav {
+        display: none;
+      }
+    }
+  }
+}
+
+
+/*
+	 ##Device = Most of the Smartphones Mobiles (Portrait)
+	 min-width = 320px max-width = 640px
+*/
+
+@media screen and (min-width: $site-min-width) and (max-width: $mobile) {
+  // SCSS
+
 }

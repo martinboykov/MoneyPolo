@@ -12,7 +12,7 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 const config = {
   mode: IS_DEV ? 'development' : 'production',
   devtool: IS_DEV ? 'eval' : 'source-map',
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   output: {
     filename: 'js/[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -22,9 +22,9 @@ const config = {
     index: 'index.html',
   },
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    // splitChunks: {
+    //   chunks: 'all',
+    // },
     minimizer: [],
   },
   module: {
@@ -58,29 +58,6 @@ const config = {
         ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[name].[ext]',
-              fallback: 'file-loader', // if images are less than 8KB load them with file-loader
-              outputPath: 'public/images',
-              limit: 8192,
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 80,
-              },
-            },
-          },
-        ],
-      },
-      {
         // only fonts
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
@@ -91,6 +68,31 @@ const config = {
               fallback: 'file-loader',
               outputPath: 'public/fonts',
               limit: 8192,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader']
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'public/images',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 70,
+              },
             },
           },
         ],

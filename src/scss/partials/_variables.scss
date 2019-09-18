@@ -1,6 +1,12 @@
-$font-default: "Open Sans", arial, sans-serif; // header menu, 1st,3rd section big text, 3rd section button, 3rd section small text in bottom right, footer
-$font-open-sans-light: "Open Sans Light", arial, sans-serif; // 1st,3rd section small text, 3rd section input text
-$font-montserat-bold: "Montserrat-Bold", arial, sans-serif; // 2n section text
+$font-default: "Open Sans",
+arial,
+sans-serif; // D - header menu, 1st,3rd section big text, 3rd section button, 3rd section small text in bottom right, footer
+$font-open-sans-light: "Open Sans",
+arial,
+sans-serif; // D - 1st,3rd section small text, 3rd section input text
+$font-montserat: "Montserrat",
+arial,
+sans-serif; // D - 2n section text
 
 // colors
 // ---------
@@ -16,9 +22,12 @@ $site-max-width: 1920px;
 $site-min-width: 320px;
 $main-width: 1366px;
 
+// header
+$header-height: 90px;
+
 // media queries breakpoints
 $mobile: 640px;
 $tablet: 768px;
 $tablet-portrait: 1024px;
-$laptop: 1440px;
+$laptop: $main-width - 1px;
 $desktop: 1920px;
