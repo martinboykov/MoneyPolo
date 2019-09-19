@@ -19,7 +19,7 @@
 
     .logo {
       margin-top: 15px; // custom - for pixel perfect
-      margin-left: 34px; // custom - for pixel perfect
+      margin-left: 29px; // custom - for pixel perfect
 
       &__link {
         img {
@@ -44,18 +44,17 @@
 
         &__item {
           display: inline-block;
-          padding: 0 13px; // custom - for pixel perfect
+          padding-right: 25px; // custom - for pixel perfect
           height: 100%;
 
           &__link {
             font-family: "Open Sans";
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 15px;
             line-height: 90px;
             color: $blue;
-            font-weight: bold;
-            letter-spacing: -1.1px; // custom - for pixel perfect
+            letter-spacing: -0.7px; // custom - for pixel perfect
 
             &:hover,
             &:active,
@@ -75,7 +74,10 @@
         }
 
         &__item:first-child {
-          margin-left: 0px;
+          // padding-left: 0px;
+        }
+        &__item:last-child {
+          padding-right: 0px;
         }
       }
     }

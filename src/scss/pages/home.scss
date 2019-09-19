@@ -2,12 +2,15 @@
  .main {
    width: 100%;
    margin: 0 auto;
-  //  height: 600px;
-  position: relative;
+   position: relative;
+   flex: 1 0 auto;
+   z-index: 0;
+
    .hero {
      width: 100%;
      height: 600px;
      position: relative;
+
      &__text {
        margin: 0 auto;
        max-width: 1366px;
@@ -19,44 +22,40 @@
          font-family: $font-default;
          color: $white;
          line-height: 75px;
-         position: absolute;
-         left: calc(348px - 267px); // custom - for pixel perfect
-         top: 214px; // custom - for pixel perfect
-         letter-spacing: -0.9px; // custom - for pixel perfect
+         padding: 213px 0 28px 73px;
+         letter-spacing: -0.6px; // custom - for pixel perfect
          z-index: 76;
+         position: relative;
        }
 
        p {
          font-size: 24px;
-         font-family: $font-default;
+         font-family: $font-open-sans-light-italic;
          color: $white;
-         font-style: italic;
+         font-style: normal;
          font-weight: 300;
          line-height: 29px; // custom - for pixel perfect
-         position: absolute;
-         left: calc(354px - 271px); // custom - for pixel perfect
-         top: 389px;
+         padding: 0 0 0px 77px;
          letter-spacing: -0.6px;
          z-index: 76;
+         position: relative;
        }
      }
 
      &__bg-img {
        background-image: url('../public/images/first_sec_bg_img.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
-       background-position: 50% 32%;
+       background-position: 50% 29%;
        background-repeat: no-repeat;
        background-size: cover;
        // background-attachment: scroll;
        height: 100%;
-       width:  100%;
+       width: 100%;
        position: absolute;
        top: 0;
        left: 0;
        z-index: 73;
-      //  transform: scale(2);
+       //  transform: scale(2);
      }
-
-
 
      @supports (mix-blend-mode: soft-light) {
        &__bg-color-fill {
@@ -64,7 +63,7 @@
          mix-blend-mode: soft-light;
          display: block;
          height: 100%;
-       width:  100%;
+         width: 100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -79,7 +78,7 @@
          background: $blue;
          display: block;
          height: 100%;
-       width:  100%;
+         width: 100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -88,15 +87,13 @@
        }
      }
 
-
-
      @supports (mix-blend-mode: hard-light) {
        &__bg-svg-layer {
-          background-image: url('../public/images/first_sec_layer_10.png');
-          mix-blend-mode: hard-light;
+         background-image: url('../public/images/first_sec_layer_10.png');
+         mix-blend-mode: hard-light;
          display: block;
          height: 100%;
-         width:  100%;
+         width: 100%;
          position: absolute;
          top: 0;
          left: 0;
@@ -109,42 +106,68 @@
 
    .features {
      min-height: 400px;
-     display: flex;
-     flex-flow: row nowrap;
-     justify-content: center;
+
+
      z-index: 90;
+
+     &__container {
+       margin: 0 auto;
+       width: 1366px;
+       padding-bottom: 110px;
+       display: flex;
+       flex-flow: row nowrap;
+       //  justify-content: space-evenly;
+       justify-content: center;
+     }
+
      .feature {
        display: flex;
        flex-flow: column nowrap;
-       justify-content: center;
+       justify-content: flex-start;
        align-items: center;
+       padding: 93px 37px 0 58px; // custom - for pixel perfect
+
+       // padding-top: 93px;
+       &__container {
+         height: 110px;
+         margin-bottom: 30px;
+       }
 
        &__img {
-         width: 100px;
-         margin-bottom: 30px;
-         transform: translateY(-10px);
+         //  width: 100px;
        }
 
        &__text {
-         font-style: $font-montserat;
-         font-weight: 700;
+         font-family: $font-montserrat;
+        //  font-weight: 700;
          color: $blue;
          line-height: 1.375;
          text-align: center;
+         letter-spacing: 1.5px;
        }
      }
 
-     .feature:nth-child(2) {
-       padding: 0 120px 0 110px;
+     .feature:nth-child(1) img {
+       width: 100px;
      }
 
-     .feature:nth-child(3) {
-       transform: translateX(10px);
+     .feature:nth-child(2) {
+       margin-left: 32px; // custom - for pixel perfect
+
+       img {
+         width: 105px;
+       }
      }
+
+     .feature:nth-child(3) img {
+       width: 103px;
+     }
+
+
    }
 
    .contact {
-    z-index: 100;
+     z-index: 100;
      width: 100%;
      height: 550px;
      position: relative;
@@ -172,36 +195,58 @@
    .main {
      .hero {
        &__text {
-         h1 {
-           font-size: 58px;
-           line-height: 75px;
-           left: calc(348px - 267px); // custom - for pixel perfect
-           top: 214px; // custom - for pixel perfect
-           letter-spacing: -0.9px; // custom - for pixel perfect
-         }
+         h1 {}
 
-         p {
-           font-size: 24px;
-           line-height: 29px; // custom - for pixel perfect
-           left: calc(354px - 271px); // custom - for pixel perfect
-           top: 389px;
-           letter-spacing: -0.6px;
-         }
+         p {}
        }
      }
 
      .features {
-       .feature:nth-child(2) {
-         padding: 0 60px 0 55px;
+       &__container {
+         margin: 0 auto;
+         width: 100%;
+         justify-content: space-evenly;
        }
 
-       .feature:nth-child(3) {
-         transform: translateX(5px);
+       .feature {
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: flex-start;
+         align-items: center;
+         padding: 93px 0px 0 0px; // custom - for pixel perfect
+
+         // padding-top: 93px;
+         &__container {
+           height: 110px;
+           margin-bottom: 30px;
+         }
+
+         &__img {}
+
+         &__text {}
+       }
+
+       .feature:nth-child(1) img {
+         width: 100px;
+       }
+
+       .feature:nth-child(2) {
+
+         img {
+           width: 105px;
+         }
+       }
+
+       .feature:nth-child(3) img {
+         width: 103px;
        }
      }
    }
  }
 
+ // --------------------------------------
+ // MOBILE PSD
+ // --------------------------------------
 
  /*
    ##Device = Tablets, Ipads (portrait)
@@ -213,46 +258,71 @@
    // SCSS
    .main {
      .hero {
+       height: 723px;
+
        &__text {
+         margin: 0 auto;
+         padding: 0 50px;
+         max-width: 100%;
+         height: 100%;
+         position: relative;
+
          h1 {
-           font-size: 58px;
+           font-family: 'Open Sans';
+           font-size: 70px;
            line-height: 75px;
-           left: calc(348px - 267px); // custom - for pixel perfect
-           top: 214px; // custom - for pixel perfect
-           letter-spacing: -0.9px; // custom - for pixel perfect
+           font-weight: normal;
+           padding: 213px 0 28px 0px;
+           letter-spacing: -0.6px; // custom - for pixel perfect
          }
 
          p {
-           font-size: 24px;
-           line-height: 29px; // custom - for pixel perfect
-           left: calc(354px - 271px); // custom - for pixel perfect
-           top: 389px;
-           letter-spacing: -0.6px;
+           font-size: 23px;
+           line-height: 30px;
+           padding: 0 0 0px 0px;
+           letter-spacing: -0.6px; // custom - for pixel perfect
          }
        }
      }
 
      .features {
-       flex-flow: column nowrap;
-       justify-content: center;
+       &__container {
+         margin: 0 auto;
+         width: 100%;
+         justify-content: space-evenly;
+       }
 
        .feature {
-         padding: 0;
+         display: flex;
+         flex-flow: column nowrap;
+         justify-content: flex-start;
+         align-items: center;
+         padding: 93px 0px 0 0px; // custom - for pixel perfect
+
+         // padding-top: 93px;
+         &__container {
+           height: 110px;
+           margin-bottom: 30px;
+         }
+
+         &__img {}
+
+         &__text {}
        }
 
-       .feature:nth-child(1) {
-         margin: 80px 0 155px 0;
+       .feature:nth-child(1) img {
+         width: 104px;
        }
 
-       .feature:nth-child(2) {
-         margin-bottom: 110px;
+       .feature:nth-child(2) img {
+         width: 108px;
        }
 
-       .feature:nth-child(3) {
-         margin-bottom: 125px;
-         transform: translateX(0px);
+       .feature:nth-child(3) img {
+         width: 107px;
        }
      }
+
    }
  }
 
@@ -267,52 +337,18 @@
    .main {
      .hero {
        &__text {
-         h1 {
-           font-size: 58px;
-           line-height: 75px;
-           left: calc(348px - 267px); // custom - for pixel perfect
-           top: 214px; // custom - for pixel perfect
-           letter-spacing: -0.9px; // custom - for pixel perfect
-
-         }
+         h1 {}
 
          .line-breaker {
            display: none;
          }
 
          p {
-           font-size: 24px;
-           line-height: 29px; // custom - for pixel perfect
-           left: calc(354px - 271px); // custom - for pixel perfect
-           top: 389px;
-           letter-spacing: -0.6px;
 
            .line-breaker {
              display: none;
            }
          }
-       }
-     }
-
-     .features {
-       flex-flow: column nowrap;
-       justify-content: center;
-
-       .feature {
-         padding: 0;
-       }
-
-       .feature:nth-child(1) {
-         margin: 80px 0 155px 0;
-       }
-
-       .feature:nth-child(2) {
-         margin-bottom: 110px;
-       }
-
-       .feature:nth-child(3) {
-         margin-bottom: 125px;
-         transform: translateX(0px);
        }
      }
    }
