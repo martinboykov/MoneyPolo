@@ -2,7 +2,7 @@ const path = require('path');
 // const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
@@ -101,6 +101,23 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(), // remove all files inside webpack's output.path directory
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-16x16.png'),
+        to: path.resolve(__dirname, 'dist', 'public', 'images'),
+        toType: 'dir',
+      },
+      {
+        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-32x32.png'),
+        to: path.resolve(__dirname, 'dist', 'public', 'images'),
+        toType: 'dir',
+      },
+      {
+        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-128x128.png'),
+        to: path.resolve(__dirname, 'dist', 'public', 'images'),
+        toType: 'dir',
+      },
+    ]),
     new MiniCssExtractPlugin({
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
     }),
@@ -110,8 +127,8 @@ const config = {
       hash: false,
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.html'),
-      favicon:
-        path.resolve(__dirname, 'src', 'public', 'images', 'favicon.ico'),
+      // favicon:
+      //   path.resolve(__dirname, 'src', 'public', 'images', 'favicon.ico'),
       minify: !IS_DEV,
     }),
     // https://github.com/GoogleChromeLabs/preload-webpack-plugin

@@ -236,7 +236,7 @@
        &__container {
          margin: 0 auto;
          width: 100%;
-         justify-content: space-evenly;
+         justify-content: space-around;
        }
 
        .feature {
@@ -291,6 +291,7 @@
    .main {
      .hero {
        height: 723px;
+       overflow: hidden;
 
        &__text {
          margin: 0 auto;
@@ -338,6 +339,11 @@
              display: none;
            }
          }
+       }
+
+       &__bg-img {
+         background-position: 55% 46px;
+         transform: scale(1.8);
        }
      }
 
@@ -475,31 +481,17 @@
 
  /*
     ##Device = Extra small Smartphones Mobiles
-    min-width = 420px max-width = 480px
+    max-width = 480px
 */
- @media screen and (min-width: $site-min-width) and (max-width: $mobile-small) {
+ @media screen  and (max-width: $mobile-small) {
 
    // SCSS
    .main {
      .hero {
        &__text {
          padding: 0 25px;
-
          h1 {}
 
-         .line-breaker {
-           display: none;
-         }
-
-         //  p {
-         //    display: inline-block;
-         //    width: 270px;
-
-         //    .line-breaker {
-         //      display: none;
-         //    }
-
-         //  }
        }
      }
 

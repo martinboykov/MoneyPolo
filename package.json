@@ -27,7 +27,6 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "vanilla-lazyload": "^12.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

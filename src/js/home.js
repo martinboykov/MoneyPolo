@@ -18,8 +18,5 @@ document.addEventListener('DOMContentLoaded', function(event) {
       link.classList.add('active');
     });
   });
-  // navLinks.addEventListener('click', function(ev) {
-  //   mobileToggleBtn.classList.add('active');
-  // });
 });
 
