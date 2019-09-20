@@ -47,7 +47,7 @@
 
         &__item {
           display: inline-block;
-          padding-right: 25px; // custom - for pixel perfect
+          padding-right: 27px; // custom - for pixel perfect
           height: 100%;
 
           &__link {
@@ -58,7 +58,7 @@
             font-size: 15px;
             line-height: 90px;
             color: $blue;
-            letter-spacing: -0.7px; // custom - for pixel perfect
+            letter-spacing: -0.55px; // custom - for pixel perfect
 
             &:hover,
             &:active,
@@ -162,7 +162,7 @@
         background: $white;
         box-shadow: 0 30px 30px -30px rgba(81, 81, 81, 0.5);
         mix-blend-mode: normal;
-        padding-top: 107px;
+        padding-top: 100px;
         display: flex;
         opacity: 0.9;
         transform: translateX(-103%);
@@ -184,7 +184,7 @@
             // padding: 100px 50px 50px 50px; // custom - for pixel perfect
             width: 100%;
             text-align: left;
-            padding: 15px 0;
+            padding: 14px 0;
 
             &__link {
               font-family: $font-open-sans-bold;
@@ -193,7 +193,7 @@
               font-size: 36px;
               line-height: 36px;
               color: $blue;
-              letter-spacing: -0.7px; // custom - for pixel perfect
+              letter-spacing: -1.5px; // custom - for pixel perfect
             }
           }
 
