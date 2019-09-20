@@ -1,27 +1,27 @@
 /* Footer */
 .footer {
-	background: #2e3b3e;
-	width: 100%;
-	height: 86px;
-	position: relative;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	color: $grey;
-	font-family: $font-default;
-	font-size: 12px;
-	flex-shrink: 0;
+  background: #2e3b3e;
+  width: 100%;
+  height: 86px;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  color: $grey;
+  font-family: $font-default;
+  font-size: 12px;
+  flex-shrink: 0;
 }
 
 
- /*
+/*
  ##Device = Desktops
  min-width = 1366px
 */
 
 @media screen and (min-width: $laptop + 1px) {
-	// SCSS
+  // SCSS
 
 }
 
@@ -32,40 +32,55 @@
 
 @media screen and (max-width: $laptop) {
 
-	// SCSS
+  // SCSS
 
 }
 
+// --------------------------------------
+// MOBILE PSD
+// --------------------------------------
 
 /*
 	##Device = Tablets, Ipads (portrait)
-	min-width = 769px max-width = 1024px
+	max-width = 1024px
 */
 
-@media screen and (min-width: $tablet + 1px) and (max-width: $tablet-portrait) {
+@media screen and (max-width: $tablet-portrait) {
 
-	// SCSS
-
+  // SCSS
+  .footer {
+		font-size: 18px;
+  }
 
 }
 
-/*
-	##Device = Low Resolution Tablets, Mobiles (Landscape)
-	max-width = 768px
+ /*
+   ##Device = Low Resolution Tablets, Mobiles (Landscape)
+   max-width = 768px
 */
 
 @media screen and (max-width: $tablet) {
-	// SCSS
+
+  // SCSS
+
+}
+
+ /*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    max-width = 640px
+*/
+
+@media screen and (max-width: $mobile) {
+  // SCSS
 
 }
 
 
-/*
-	 ##Device = Most of the Smartphones Mobiles (Portrait)
-	 min-width = 320px max-width = 640px
+ /*
+    ##Device = Extra small Smartphones Mobiles
+    min-width = 420px max-width = 480px
 */
-
-@media screen and (min-width: $site-min-width) and (max-width: $mobile) {
-	// SCSS
+@media screen and (min-width: $site-min-width) and (max-width: $mobile-small) {
+  // SCSS
 
 }

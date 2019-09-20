@@ -32,8 +32,6 @@
          font-size: 24px;
          font-family: $font-open-sans-light-italic;
          color: $white;
-         font-style: normal;
-         font-weight: 300;
          line-height: 29px; // custom - for pixel perfect
          padding: 0 0 0px 77px;
          letter-spacing: -0.6px;
@@ -139,7 +137,6 @@
 
        &__text {
          font-family: $font-montserrat;
-        //  font-weight: 700;
          color: $blue;
          line-height: 1.375;
          text-align: center;
@@ -231,6 +228,7 @@
        }
 
        .feature:nth-child(2) {
+         margin-left: 0px;
 
          img {
            width: 105px;
@@ -250,10 +248,10 @@
 
  /*
    ##Device = Tablets, Ipads (portrait)
-   min-width = 769px max-width = 1024px
+   max-width = 1024px
 */
 
- @media screen and (min-width: $tablet + 1px) and (max-width: $tablet-portrait) {
+ @media screen and (max-width: $tablet-portrait) {
 
    // SCSS
    .main {
@@ -268,10 +266,10 @@
          position: relative;
 
          h1 {
-           font-family: 'Open Sans';
+           font-family: 'Open Sans Light';
            font-size: 70px;
            line-height: 75px;
-           font-weight: normal;
+           //  font-weight: 300
            padding: 213px 0 28px 0px;
            letter-spacing: -0.6px; // custom - for pixel perfect
          }
@@ -289,7 +287,8 @@
        &__container {
          margin: 0 auto;
          width: 100%;
-         justify-content: space-evenly;
+         flex-flow: column nowrap;
+         justify-content: center;
        }
 
        .feature {
@@ -297,29 +296,40 @@
          flex-flow: column nowrap;
          justify-content: flex-start;
          align-items: center;
-         padding: 93px 0px 0 0px; // custom - for pixel perfect
+         padding: 93px 50px 0 50px; // custom - for pixel perfect
 
-         // padding-top: 93px;
          &__container {
-           height: 110px;
-           margin-bottom: 30px;
+           height: 140px;
+           margin-bottom: 60px;
          }
 
          &__img {}
 
-         &__text {}
+         &__text {
+           font-family: $font-open-sans-bold;
+           font-size: 40px;
+           //  font-weight: 700;
+           line-height: 43px;
+         }
        }
 
-       .feature:nth-child(1) img {
-         width: 104px;
+       .feature:nth-child(1) {
+
+         img {
+           width: 130px;
+         }
        }
 
-       .feature:nth-child(2) img {
-         width: 108px;
+       .feature:nth-child(2) {
+         margin-left: 0px;
+
+         img {
+           width: 137px;
+         }
        }
 
        .feature:nth-child(3) img {
-         width: 107px;
+         width: 134px;
        }
      }
 
@@ -357,10 +367,94 @@
 
  /*
     ##Device = Most of the Smartphones Mobiles (Portrait)
-    min-width = 320px max-width = 640px
+    max-width = 640px
 */
 
- @media screen and (min-width: $site-min-width) and (max-width: $mobile) {
-   // SCSS
+ @media screen and (max-width: $mobile) {
 
+   // SCSS
+   .main {
+     .hero {
+       &__text {
+         h1 {}
+
+         .line-breaker {
+           display: none;
+         }
+
+         p {
+           display: inline-block;
+           width: 270px;
+
+           .line-breaker {
+             display: none;
+           }
+
+         }
+       }
+     }
+   }
+ }
+
+ /*
+    ##Device = Extra small Smartphones Mobiles
+    min-width = 420px max-width = 480px
+*/
+ @media screen and (min-width: $site-min-width) and (max-width: $mobile-small) {
+
+   // SCSS
+   .main {
+     .hero {
+       &__text {
+         padding: 0 25px;
+
+         h1 {
+         }
+
+         .line-breaker {
+           display: none;
+         }
+
+         p {
+           display: inline-block;
+           width: 270px;
+
+           .line-breaker {
+             display: none;
+           }
+
+         }
+       }
+     }
+     .features {
+      &__container {
+        margin: 0 auto;
+        width: 100%;
+        flex-flow: column nowrap;
+        justify-content: center;
+      }
+
+      .feature {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 93px 25px 0 25px; // custom - for pixel perfect
+
+        &__container {
+          height: 140px;
+          margin-bottom: 60px;
+        }
+
+        &__img {}
+
+        &__text {
+          font-family: $font-open-sans-bold;
+          font-size: 40px;
+          //  font-weight: 700;
+          line-height: 43px;
+        }
+      }
+    }
+   }
  }

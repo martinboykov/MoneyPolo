@@ -1,6 +1,7 @@
 $font-default: "Open Sans", arial, sans-serif; // D - header menu, 1st,3rd section big text, 3rd section button, 3rd section small text in bottom right, footer
 $font-open-sans-light: "Open Sans Light", arial, sans-serif; // D - 1st,3rd section small text, 3rd section input text
 $font-open-sans-light-italic: "Open Sans Light Italic", arial, sans-serif; // D - 1st,3rd section small text, 3rd section input text
+$font-open-sans-bold: "Open Sans Bold", arial, sans-serif; // D - 1st,3rd section small text, 3rd section input text
 $font-montserrat: "Montserrat", sans-serif; // D - 2n section text
 
 // colors
@@ -14,13 +15,14 @@ $grey: #b9b9b9; // footer text
 
 // Loayut
 $site-max-width: 1920px;
-$site-min-width: 320px;
+$site-min-width: 420px;
 $main-width: 1366px;
 
 // header
 $header-height: 90px;
 
 // media queries breakpoints
+$mobile-small: 480px;
 $mobile: 640px;
 $tablet: 768px;
 $tablet-portrait: 1024px;
