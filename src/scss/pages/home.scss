@@ -2,6 +2,7 @@
  .main {
    width: 100%;
    margin: 0 auto;
+   margin-top: -90px;
    position: relative;
    flex: 1 0 auto;
    z-index: 0;
@@ -289,6 +290,7 @@
 
    // SCSS
    .main {
+    margin-top: -107px;
      .hero {
        height: 723px;
        overflow: hidden;
