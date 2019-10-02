@@ -74,7 +74,7 @@ const config = {
       },
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: ['html-loader'],
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
@@ -103,17 +103,20 @@ const config = {
     new CleanWebpackPlugin(), // remove all files inside webpack's output.path directory
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-16x16.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-16x16.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-32x32.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-32x32.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-128x128.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-128x128.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },

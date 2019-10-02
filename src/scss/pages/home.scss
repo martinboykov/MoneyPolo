@@ -290,7 +290,8 @@
 
    // SCSS
    .main {
-    margin-top: -107px;
+     margin-top: -107px;
+
      .hero {
        height: 723px;
        overflow: hidden;
@@ -485,13 +486,14 @@
     ##Device = Extra small Smartphones Mobiles
     max-width = 480px
 */
- @media screen  and (max-width: $mobile-small) {
+ @media screen and (max-width: $mobile-small) {
 
    // SCSS
    .main {
      .hero {
        &__text {
          padding: 0 25px;
+
          h1 {}
 
        }

@@ -1,9 +1,10 @@
-
 @font-face {
   font-family: 'Open Sans';
-  src: url('../public/fonts/OpenSans-Regular-webfont.eot?') format('eot'),
-       url('../public/fonts/OpenSans-Regular-webfont.woff') format('woff'),
-       url('../public/fonts/OpenSans-Regular-webfont.ttf') format('truetype');
+  src:
+    url('../public/fonts/OpenSans-Regular-webfont.woff2') format("woff2"),
+    url('../public/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+    url('../public/fonts/OpenSans-Regular-webfont.eot?') format('eot'),
+    url('../public/fonts/OpenSans-Regular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,6 +18,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Open Sans Light";
   src:
@@ -26,6 +28,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Open Sans Bold";
   src:
@@ -35,6 +38,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Montserrat";
   src:
