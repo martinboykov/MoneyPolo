@@ -33,6 +33,5 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 window.addEventListener('load', function(event) {
-  console.log(event);
-  console.log('loaded');
+
 });
