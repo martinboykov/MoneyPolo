@@ -24,10 +24,11 @@
       margin-top: 15px; // custom - for pixel perfect
       margin-left: 29px; // custom - for pixel perfect
       z-index: 83;
-
+      @include transition(all);
       &__link {
         img {
           width: 139px;
+          @include transition(all);
         }
       }
     }
@@ -145,10 +146,10 @@
     .container {
       padding: 0 50px;
       height: 107px;
-
+      @include transition(all);
       .logo {
         margin-left: 0px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         &__link {
           img {
@@ -304,13 +305,23 @@
   // SCSS
   .header {
     .container {
-      padding: 0 25px;
 
-      .logo {}
+      padding: 0 15px;
+      @include transition(all);
+
+      .logo {
+        margin-top: 20px;
+
+        &__link {
+          img {
+            width: 170px;
+          }
+        }
+      }
 
       .nav {
         .menu {
-          padding: 0 25px;
+          padding: 0 15px;
         }
       }
     }
