@@ -62,12 +62,10 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              fallback: 'file-loader',
               outputPath: 'public/fonts',
-              limit: 8192,
             },
           },
         ],
@@ -77,11 +75,13 @@ const config = {
         use: ['html-loader'],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpe?g|gif)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8192,
+              fallback: 'file-loader',
               name: '[name].[hash].[ext]',
               outputPath: 'public/images',
             },
@@ -91,7 +91,11 @@ const config = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 70,
+                quality: 80,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
               },
             },
           },
@@ -120,6 +124,12 @@ const config = {
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },
+      {
+        from: path.resolve(
+          __dirname, 'src', 'public', 'fonts'),
+        to: path.resolve(__dirname, 'dist', 'public', 'fonts'),
+        toType: 'dir',
+      },
     ]),
     new MiniCssExtractPlugin({
       filename: IS_DEV ? 'css/[name].css' : 'css/[name].[contenthash].css',
@@ -127,7 +137,7 @@ const config = {
     new CssUrlRelativePlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      hash: false,
+      // hash: false,
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.html'),
       // favicon:

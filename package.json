@@ -26,8 +26,7 @@
     "lint": "eslint src/js",
     "lint:fix": "npm run lint -- --fix"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",

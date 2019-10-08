@@ -2,9 +2,12 @@
  .main {
    width: 100%;
    margin: 0 auto;
-   margin-top: -90px;
-   position: relative;
-   flex: 1 0 auto;
+   //  margin-top: -90px;
+   //  position: absolute;
+   top: 0;
+   left: 0;
+   min-height: calc(100vh - 86px);
+   //  flex: 1 0 auto;
    z-index: 0;
 
    .hero {
@@ -66,7 +69,7 @@
      }
 
      &__bg-img {
-       background-image: url('../public/images/first_sec_bg_img.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
+       background-image: url('../public/images/first_sec_bg_img-1920w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
        background-position: 50% 29%;
        background-repeat: no-repeat;
        background-size: cover;
@@ -112,7 +115,7 @@
 
      @supports (mix-blend-mode: hard-light) {
        &__bg-svg-layer {
-         background-image: url('../public/images/first_sec_layer_10.png');
+         background-image: url('../public/images/first_sec_layer_10-1920w.png');
          mix-blend-mode: hard-light;
          display: block;
          height: 100%;
@@ -212,8 +215,13 @@
 */
 
  @media screen and (min-width: $laptop + 1px) {
-   // SCSS
 
+   // SCSS
+   @supports (mix-blend-mode: hard-light) {
+     &__bg-svg-layer {
+       background-image: url('../public/images/first_sec_layer_10-1365w.png');
+     }
+   }
  }
 
  /*
@@ -230,6 +238,10 @@
          h1 {}
 
          p {}
+       }
+
+       &__bg-img {
+         background-image: url('../public/images/first_sec_bg_img-1365w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
        }
      }
 
@@ -290,7 +302,7 @@
 
    // SCSS
    .main {
-     margin-top: -107px;
+     //  margin-top: -107px;
 
      .hero {
        height: 723px;
@@ -345,8 +357,15 @@
        }
 
        &__bg-img {
-         background-position: 55% 46px;
-         transform: scale(1.8);
+         background-image: url('../public/images/first_sec_bg_img-1024w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
+         //  background-position: 55% 46px;
+         //  transform: scale(1.8);
+       }
+
+       @supports (mix-blend-mode: hard-light) {
+         &__bg-svg-layer {
+           background-image: url('../public/images/first_sec_layer_10-1024w.png');
+         }
        }
      }
 
@@ -446,6 +465,15 @@
            }
          }
        }
+
+       &__bg-img {
+         background-image: url('../public/images/first_sec_bg_img-768w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
+       }
+       @supports (mix-blend-mode: hard-light) {
+        &__bg-svg-layer {
+          background-image: url('../public/images/first_sec_layer_10-768w.png');
+        }
+      }
      }
    }
  }
@@ -497,6 +525,15 @@
          h1 {}
 
        }
+
+       //  &__bg-img {
+       //   background-image: url('../public/images/first_sec_bg_img-480w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
+       // }
+       @supports (mix-blend-mode: hard-light) {
+        &__bg-svg-layer {
+          background-image: url('../public/images/first_sec_layer_10-480w.png');
+        }
+      }
      }
 
      .features {
