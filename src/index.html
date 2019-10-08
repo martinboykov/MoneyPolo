@@ -6,7 +6,7 @@
             content="text/html"
             charset=utf-8 />
       <meta name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            content="width=device-width, initial-scale=1" />
       <meta name="description"
             content="Money polo allows to make payments, transfer money, and keep track of transactions online." />
       <title>MoneyPolo</title>
@@ -19,9 +19,122 @@
       <link rel="shortcut icon"
             sizes="128x128"
             href="./public/images/favicon-128x128.png">
+      <style>
+            @supports (-ms-ime-align:auto) {
+                  @font-face {
+                        font-family: 'Open Sans';
+                        src: url("./public/fonts/opensans-regular-webfont.eot");
+                        src: local("Open Sans"),
+                              url("./public/fonts/opensans-regular-webfont.eot?#iefix") format('embedded-opentype'),
+                              url('./public/fonts/opensans-regular-webfont.woff2') format("woff2"),
+                              url('./public/fonts/opensans-regular-webfont.woff') format('woff'),
+                              url('./public/fonts/opensans-regular-webfont.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                  }
+
+                  @font-face {
+                        font-family: "Open Sans Light Italic";
+                        src: url("./public/fonts/opensans-lightitalic-webfont.eot");
+                        src: local("Open Sans Light Italic"),
+                              url("./public/fonts/opensans-lightitalic-webfont.eot?#iefix") format('embedded-opentype'),
+                              url("./public/fonts/opensans-lightitalic-webfont.woff2") format("woff2"),
+                              url("./public/fonts/opensans-lightitalic-webfont.woff") format("woff"),
+                              url("./public/fonts/opensans-lightitalic-webfont.ttf") format("truetype");
+                        font-weight: normal;
+                        font-style: normal;
+                  }
+
+                  @font-face {
+                        font-family: "Open Sans Light";
+                        src: url("./public/fonts/opensans-light-webfont.eot");
+                        src: local("Open Sans Light"),
+                              url("./public/fonts/opensans-light-webfont.eot?#iefix") format('embedded-opentype'),
+                              url("./public/fonts/opensans-light-webfont.woff2") format("woff2"),
+                              url("./public/fonts/opensans-light-webfont.woff") format("woff"),
+                              url("./public/fonts/opensans-light-webfont.ttf") format("truetype");
+                        font-weight: normal;
+                        font-style: normal;
+                  }
+
+                  @font-face {
+                        font-family: "Open Sans Bold";
+                        src: url("./public/fonts/opensans-bold-webfont.eot");
+                        src: local("Open Sans Bold"),
+                              url("./public/fonts/opensans-bold-webfont.eot?#iefix") format('embedded-opentype'),
+                              url("./public/fonts/opensans-bold-webfont.woff2") format("woff2"),
+                              url("./public/fonts/opensans-bold-webfont.woff") format("woff"),
+                              url("./public/fonts/opensans-bold-webfont.ttf") format("truetype");
+                        font-weight: normal;
+                        font-style: normal;
+                  }
+
+                  @font-face {
+                        font-family: "Montserrat";
+                        src: url("./public/fonts/montserrat.eot");
+                        src: local("Montserrat"),
+                              url("./public/fonts/montserrat.eot?#iefix") format('embedded-opentype'),
+                              url("./public/fonts/montserrat.woff2") format("woff2"),
+                              url("./public/fonts/montserrat.woff") format("woff"),
+                              url("./public/fonts/montserrat.ttf") format("truetype");
+                        font-weight: normal;
+                        font-style: normal;
+                  }
+            }
+      </style>
+      <script>
+            // https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization
+            (function() {
+                  function loadFonts() {
+                        if (!("fonts" in document)) {
+                              return;
+                        }
+                        const opensansRegular = new FontFace("Open Sans", "url('./public/fonts/opensans-regular-webfont.woff2') format('woff2')", {
+                              weight: "normal",
+                              style: "normal"
+                        });
+                        const opensansLightItalic = new FontFace("Open Sans Light Italic", "url('./public/fonts/opensans-lightitalic-webfont.woff2') format('woff2')", {
+                              weight: "normal",
+                              style: "normal"
+                        });
+                        const opensansLight = new FontFace("Open Sans Light", "url('./public/fonts/opensans-light-webfont.woff2') format('woff2')", {
+                              weight: "normal",
+                              style: "normal"
+                        });
+                        const opensansBold = new FontFace("Open Sans Bold", "url('./public/fonts/opensans-bold-webfont.woff2') format('woff2')", {
+                              weight: "normal",
+                              style: "normal"
+                        });
+
+                        const montserrat = new FontFace("Montserrat", "url('./public/fonts/montserrat.woff2') format('woff2')", {
+                              weight: "normal",
+                              style: "normal"
+                        });
+                        Promise.all([
+                              opensansRegular.load(),
+                              opensansLightItalic.load(),
+                              opensansLight.load(),
+                              opensansBold.load(),
+                              montserrat.load(),
+                        ]).then(function(loadedFonts) {
+                              // Render them at the same time
+                              loadedFonts.forEach(function(font) {
+                                    document.fonts.add(font);
+                              });
+                        });
+                  }
+                  if ("matchMedia" in window && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                        // do nothing
+                  } else {
+                        loadFonts();
+                  }
+            })();
+      </script>
+
 </head>
 
 <body>
+
       <header class="header ">
             <div class="container">
 
@@ -31,8 +144,9 @@
                            class="logo__link">
 
                               <img class="logo__image"
-                                   src="./public/images/logo.png"
+                                   id="logo"
                                    alt="Money polo allows to make payments, transfer money, and keep track of transactions online.">
+                              <!--  src="./public/images/logo.png" -->
                         </a>
                   </div>
                   <nav class="nav">
@@ -97,8 +211,9 @@
                               <div class="feature__container">
                                     <img id="feature__img-one"
                                          class="feature__img"
-                                         src="./public/images/second_sec_img_1.png"
                                          alt="ДО 14% ГОДИШНА ДОХОДНОСТ">
+                                    <!-- src="./public/images/second_sec_img_1.png" -->
+
                               </div>
 
                               <h2 class="feature__text">ДО 14% ГОДИШНА <span class="desktop"></span> <span
@@ -109,8 +224,9 @@
                               <div class="feature__container">
                                     <img id="feature__img-two"
                                          class="feature__img"
-                                         src="./public/images/second_sec_img_2.png"
                                          alt="ЛЕСНА РАБОТА  С MONEY POLO ПЛАТФОРМАТА">
+                                    <!-- src="./public/images/second_sec_img_2.png" -->
+
                               </div>
                               <h2 class="feature__text">ЛЕСНА РАБОТА <span class="mobile"></span> С <span
                                           class="desktop"></span> MONEY POLO <span class="mobile"></span>ПЛАТФОРМАТА
@@ -120,14 +236,14 @@
                               <div class="feature__container">
                                     <img id="feature__img-three"
                                          class="feature__img"
-                                         src="./public/images/second_sec_img_3.png"
                                          alt="BUY-BACK ГАРАНЦИЯ НА ПАРИТЕ ТИ">
+                                    <!--  src="./public/images/second_sec_img_3.png" -->
+
                               </div>
                               <h2 class="feature__text">BUY-BACK <span class="mobile"></span> ГАРАНЦИЯ <span
                                           class="desktop"></span> НА <span class="mobile"></span> ПАРИТЕ ТИ</h2>
                         </article>
                   </div>
-
             </section>
             <section class="contact"></section>
       </main>

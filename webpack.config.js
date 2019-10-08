@@ -62,26 +62,26 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              fallback: 'file-loader',
               outputPath: 'public/fonts',
-              limit: 8192,
             },
           },
         ],
       },
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: ['html-loader'],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpe?g|gif)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8192,
+              fallback: 'file-loader',
               name: '[name].[hash].[ext]',
               outputPath: 'public/images',
             },
@@ -91,7 +91,11 @@ const config = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 70,
+                quality: 80,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
               },
             },
           },
@@ -103,18 +107,27 @@ const config = {
     new CleanWebpackPlugin(), // remove all files inside webpack's output.path directory
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-16x16.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-16x16.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-32x32.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-32x32.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
         toType: 'dir',
       },
       {
-        from: path.resolve(__dirname, 'src', 'public', 'images', 'favicon-128x128.png'),
+        from: path.resolve(
+          __dirname, 'src', 'public', 'images', 'favicon-128x128.png'),
         to: path.resolve(__dirname, 'dist', 'public', 'images'),
+        toType: 'dir',
+      },
+      {
+        from: path.resolve(
+          __dirname, 'src', 'public', 'fonts'),
+        to: path.resolve(__dirname, 'dist', 'public', 'fonts'),
         toType: 'dir',
       },
     ]),
@@ -124,7 +137,7 @@ const config = {
     new CssUrlRelativePlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      hash: false,
+      // hash: false,
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.html'),
       // favicon:
