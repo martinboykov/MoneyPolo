@@ -66,6 +66,7 @@
      }
 
      &__bg-img {
+       display: none;
        background-image: url('../public/images/first_sec_bg_img-1920w.jpg'), linear-gradient(65deg, rgb(0, 153, 61) 0%, rgb(166, 206, 56) 100%);
        background-position: 50% 29%;
        background-repeat: no-repeat;

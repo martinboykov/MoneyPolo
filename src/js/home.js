@@ -33,5 +33,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 window.addEventListener('load', function(event) {
-
+  const imgBg = document.body.querySelector('.hero__bg-img');
+  imgBg.style.cssText = 'display: block;';
 });
